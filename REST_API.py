@@ -67,13 +67,13 @@ def stop():
 
 @app.route("/offlight", methods=['GET', 'POST'])
 def off():
-	robot.container_opening('off')
+	robot.container_opening('OFF')
 	return ('', 204)
 
 
 @app.route("/onlight", methods=['GET', 'POST'])
 def on():
-	robot.container_opening('on')
+	robot.container_opening('ON')
 	return ('', 204)
 
 

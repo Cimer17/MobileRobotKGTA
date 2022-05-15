@@ -5,7 +5,7 @@ import time
 class Robots():
     
     def __init__(self):   
-        self.ser = serial.Serial('COM4', 9600)  
+        self.ser = serial.Serial('/dev/cu.usbserial-120', 9600)  
         time.sleep(2)
         self.ser.reset_input_buffer()
     
@@ -33,7 +33,7 @@ if __name__ == '__main__':
     while True:
         command = input('Выберите команду - stop/forward/left/right:')
         if command is not None:
-            robot.robot_movement(command)
+            robot.container_opening(command)
             print(f'Команда - {command} ')
         else:
             continue
