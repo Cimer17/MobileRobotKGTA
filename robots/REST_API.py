@@ -65,17 +65,5 @@ def stop():
 	return ('', 204)
 
 
-@app.route("/offlight", methods=['GET', 'POST'])
-def off():
-	robot.container_opening('OFF')
-	return ('', 204)
-
-
-@app.route("/onlight", methods=['GET', 'POST'])
-def on():
-	robot.container_opening('ON')
-	return ('', 204)
-
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=7092)

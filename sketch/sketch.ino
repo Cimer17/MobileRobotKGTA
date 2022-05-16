@@ -5,7 +5,8 @@ Servo motor_R;
 
 void setup() {
   Serial.begin(9600);
-  pinMode(LED_BUILTIN, OUTPUT);
+  motor_L.attach(12, 1000, 2000);
+  motor_R.attach(13, 1000, 2000);
 }
 
 
@@ -34,12 +35,6 @@ void loop() {
       case 'R':
         motor_L.write(180);
         motor_R.write(90); 
-        break;
-      case 'O':
-        digitalWrite(LED_BUILTIN, HIGH);
-        break;
-      case 'N':
-        digitalWrite(LED_BUILTIN, LOW);
         break;
     }
     }
