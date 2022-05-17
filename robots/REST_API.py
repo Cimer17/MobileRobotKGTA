@@ -65,5 +65,17 @@ def stop():
 	return ('', 204)
 
 
+@app.route("/open", methods=['GET', 'POST'])
+def open():
+	robot.container_opening('open')
+	return ('', 204)
+
+
+@app.route("/close", methods=['GET', 'POST'])
+def close():
+	robot.container_opening('close')
+	return ('', 204)
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=7092)

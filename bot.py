@@ -65,6 +65,7 @@ def requestAPI_DRIVE(hostIP, command):
 """ тестовая функция управления по API посредством клавиатуры"""
 def robotRUNmanual(hostIP, decode_sql, user_id):
     print('Управление включено!')
+    keyboard.add_hotkey('enter', lambda: requestAPI_DRIVE(hostIP, 'stop')) 
     keyboard.add_hotkey('tab', lambda: requestAPI_DRIVE(hostIP, 'stop'))  
     keyboard.add_hotkey('up', lambda: requestAPI_DRIVE(hostIP, 'forward'))
     keyboard.add_hotkey('right', lambda: requestAPI_DRIVE(hostIP, 'turnRight'))  

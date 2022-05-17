@@ -5,7 +5,7 @@ import time
 class Robots():
     
     def __init__(self):   
-        self.ser = serial.Serial('COM4', 9600)  
+        self.ser = serial.Serial('/dev/cu.usbserial-1120', 9600)  
         time.sleep(2)
         self.ser.reset_input_buffer()
     
@@ -22,9 +22,9 @@ class Robots():
             self.ser.write(b'L')
  
     def container_opening(self, command):
-        if command == 'ON':
+        if command == 'open':
             self.ser.write(b'O')
-        elif command == 'OFF':
+        elif command == 'close':
             self.ser.write(b'N')
 
 
